@@ -334,5 +334,174 @@ export const LESSONS: Lesson[] = [
         explanation: '「面」(miàn) 的韻母是 ian。'
       }
     ]
+  },
+  {
+    id: 6,
+    title: '綜合大冒險',
+    subtitle: '拼音小達人：20題大挑戰！',
+    icon: '🌈',
+    animal: '🦁',
+    questions: [
+      {
+        id: 601,
+        category: '韻母辨識',
+        question: '「優」(yōu) 的實際韻母組合是？',
+        options: ['iou', 'iu', 'iou'],
+        correctIndex: 0,
+        explanation: '實際為 iou，拼寫時縮寫為 iu。'
+      },
+      {
+        id: 602,
+        category: 'ü 行規則',
+        question: '當「q」和「üan」組合時，音節寫作？',
+        options: ['qüan', 'quán', 'qian'],
+        correctIndex: 1,
+        explanation: 'j, q, x 與 ü 相拼要去掉兩點。'
+      },
+      {
+        id: 603,
+        category: '標調位置',
+        question: '「球」(qiu) 的聲調應該標在？',
+        options: ['i 上', 'u 上', 'q 上'],
+        correctIndex: 1,
+        explanation: 'i、u 並列標在後。'
+      },
+      {
+        id: 604,
+        category: '韻母辨識',
+        question: '「鴉」(yā) 的韻母是？',
+        options: ['ia', 'a', 'ua'],
+        correctIndex: 0,
+        explanation: '「鴉」的音節是 yā，韻母是 ia。'
+      },
+      {
+        id: 605,
+        category: '音節拼寫',
+        question: '「烏」自成音節時正確的寫法是？',
+        options: ['u', 'wu', 'wū'],
+        correctIndex: 2,
+        explanation: 'u 前加 w，並標上聲調。'
+      },
+      {
+        id: 606,
+        category: '標調規則',
+        question: '「i 和 u 並列」時，聲調標在？',
+        options: ['前一個字母', '後一個字母', '隨便哪一個'],
+        correctIndex: 1,
+        explanation: '誰在後面標誰身上。'
+      },
+      {
+        id: 607,
+        category: '詞語辨析',
+        question: '「齊全」中「全」(quán) 的韻母是？',
+        options: ['uan', 'üan', 'an'],
+        correctIndex: 1,
+        explanation: '「全」的原韻母是 üan。'
+      },
+      {
+        id: 608,
+        category: 'ü 行規則',
+        question: '音節「xué」的原韻母組合是？',
+        options: ['x + üe', 'x + ue', 'x + ie'],
+        correctIndex: 0,
+        explanation: 'x 與 üe 相拼去兩點。'
+      },
+      {
+        id: 609,
+        category: '標調實戰',
+        question: '「會」(hui) 的第四聲，寫法是？',
+        options: ['huì', 'hùi', 'hui'],
+        correctIndex: 0,
+        explanation: 'i、u 在一起標在後，這裡 i 在後。'
+      },
+      {
+        id: 610,
+        category: '韻母辨識',
+        question: '「音」(yīn) 的韻母是？',
+        options: ['in', 'ing', 'ian'],
+        correctIndex: 0,
+        explanation: '「音」的韻母是前鼻音 in。'
+      },
+      {
+        id: 611,
+        category: '標調順序',
+        question: '拼音標調的優先順序第一名是？',
+        options: ['o', 'e', 'a'],
+        correctIndex: 2,
+        explanation: '有 a 不放過，a 是老大。'
+      },
+      {
+        id: 612,
+        category: '生活詞語',
+        question: '「旁邊兒」中「邊」的韻母是？',
+        options: ['an', 'ian', 'uan'],
+        correctIndex: 1,
+        explanation: '「邊」(biān) 的韻母是 ian。'
+      },
+      {
+        id: 613,
+        category: 'ü 行規則',
+        question: '「n」和「ü」相拼時，兩點需要去掉嗎？',
+        options: ['需要', '不需要', '都可以'],
+        correctIndex: 1,
+        explanation: '只有 j, q, x, y 才去兩點，n, l 不去喔！'
+      },
+      {
+        id: 614,
+        category: '標調位置',
+        question: '「對」(dui) 的聲調標在？',
+        options: ['u 上', 'i 上', 'd 上'],
+        correctIndex: 1,
+        explanation: 'i、u 在一起標在後。'
+      },
+      {
+        id: 615,
+        category: '音節拼寫',
+        question: '「藥丸」正確的拼寫是？',
+        options: ['yào wán', 'iào uán', 'yāo wán'],
+        correctIndex: 0,
+        explanation: 'i 改 y，u 改 w。'
+      },
+      {
+        id: 616,
+        category: '標調位置',
+        question: '「決」(jue) 的聲調標在？',
+        options: ['j 上', 'u 上', 'e 上'],
+        correctIndex: 2,
+        explanation: '沒 a 找 o、e，這裏有 e。'
+      },
+      {
+        id: 617,
+        category: '韻母辨識',
+        question: '「耶」(yē) 的韻母是？',
+        options: ['ie', 'ia', 'ue'],
+        correctIndex: 0,
+        explanation: '「耶」的韻母是 ie。'
+      },
+      {
+        id: 618,
+        category: '生活詞語',
+        question: '「社區」中「區」的韻母是？',
+        options: ['u', 'ü', 'i'],
+        correctIndex: 1,
+        explanation: '「區」的音節是 qū，韻母是 ü。'
+      },
+      {
+        id: 619,
+        category: '標調實戰',
+        question: '「柳」(liu) 的第三聲寫法是？',
+        options: ['lǐu', 'liǔ', 'liù'],
+        correctIndex: 1,
+        explanation: 'i、u 在一起標在後，標在 u 上。'
+      },
+      {
+        id: 620,
+        category: '綜合規則',
+        question: '下列哪一個音節標調是正確的？',
+        options: ['qíu', 'xiū', 'dùi'],
+        correctIndex: 1,
+        explanation: '只有 xiū 標在了正確的後面字母 u 上。'
+      }
+    ]
   }
 ];
