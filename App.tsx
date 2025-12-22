@@ -18,14 +18,10 @@ const App: React.FC = () => {
 
   const selectLesson = (lesson: Lesson) => {
     setCurrentLesson(lesson);
-    setAppState(AppState.START);
-  };
-
-  const handleStart = () => {
-    setAppState(AppState.QUIZ);
-    setCurrentIndex(0);
     setScore(0);
+    setCurrentIndex(0);
     resetQuestionState();
+    setAppState(AppState.QUIZ);
   };
 
   const resetQuestionState = () => {
@@ -157,33 +153,6 @@ const App: React.FC = () => {
           </div>
         )}
 
-        {/* State: START */}
-        {appState === AppState.START && currentLesson && (
-          <div className="bg-white rounded-[3rem] p-10 shadow-2xl text-center border-b-[12px] border-pink-200 animate-bounce-in relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-2 bg-pink-100/50"></div>
-            <div className="text-8xl mb-8 animate-float">{currentLesson.icon}</div>
-            <h2 className="text-3xl font-black text-slate-700 mb-4">{currentLesson.title}</h2>
-            <p className="text-slate-500 mb-10 text-lg leading-relaxed px-4">
-              準備好大顯身手了嗎？<br/>
-              <span className="text-blue-400 font-bold">幫助小{currentLesson.animal}跑到終點！</span>
-            </p>
-            <div className="space-y-4">
-              <button 
-                onClick={handleStart}
-                className="w-full bg-gradient-to-r from-pink-400 to-orange-400 hover:from-pink-500 hover:to-orange-500 text-white font-black py-5 rounded-3xl shadow-xl transform active:scale-95 transition-all text-2xl border-b-4 border-pink-700/30"
-              >
-                立即出發！
-              </button>
-              <button 
-                onClick={goToLessonSelect}
-                className="w-full text-slate-400 font-bold py-3 hover:text-slate-600 transition-all text-sm"
-              >
-                返回主選單
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* State: QUIZ */}
         {appState === AppState.QUIZ && currentLesson && currentQuestion && (
           <div className="space-y-6 animate-fade-in relative">
@@ -301,7 +270,7 @@ const App: React.FC = () => {
 
             <div className="space-y-4">
               <button 
-                onClick={handleStart}
+                onClick={() => selectLesson(currentLesson)}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white font-black py-5 rounded-[2rem] shadow-xl transform active:scale-95 transition-all text-2xl border-b-4 border-blue-800/30"
               >
                 再次挑戰

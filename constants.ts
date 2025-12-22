@@ -15,7 +15,7 @@ export const LESSONS: Lesson[] = [
         question: '「衣」的韻母是？',
         options: ['i', 'ia', 'ie'],
         correctIndex: 0,
-        explanation: '「衣」的韻母是 i。'
+        explanation: '「衣」的韻母是單韻母 i。'
       },
       {
         id: 102,
@@ -88,46 +88,6 @@ export const LESSONS: Lesson[] = [
         options: ['uo', 'uan', 'uen'],
         correctIndex: 0,
         explanation: '「窩」(wō) 的韻母是 uo。'
-      },
-      {
-        id: 111,
-        category: '音節拼寫',
-        question: '「藥丸」的正確音節是？',
-        options: ['iào uán', 'yào wán', 'yāo wán'],
-        correctIndex: 1,
-        explanation: 'i 改寫為 y，u 改寫為 w。'
-      },
-      {
-        id: 112,
-        category: '音節拼寫',
-        question: '「蛙泳」的正確音節是？',
-        options: ['uā ǐǒng', 'wā yǒng', 'wā yōng'],
-        correctIndex: 1,
-        explanation: '「蛙」寫作 wā，「泳」寫作 yǒng。'
-      },
-      {
-        id: 113,
-        category: '音節拼寫',
-        question: '「鸚鵡」的正確音節是？',
-        options: ['īng ǔ', 'yīng wǔ', 'yīng wū'],
-        correctIndex: 1,
-        explanation: '「鸚」加 y，「鵡」加 w。'
-      },
-      {
-        id: 114,
-        category: '音節拼寫',
-        question: '「衣」自成音節的寫法是？',
-        options: ['yī', 'yi', 'i'],
-        correctIndex: 0,
-        explanation: 'i 前加 y，標聲調寫作 yī。'
-      },
-      {
-        id: 115,
-        category: '音節拼寫',
-        question: '「烏」自成音節的寫法是？',
-        options: ['u', 'wu', 'wū'],
-        correctIndex: 2,
-        explanation: 'u 前加 w，標聲調寫作 wū。'
       }
     ]
   },
@@ -179,30 +139,6 @@ export const LESSONS: Lesson[] = [
         explanation: '「約」(yuē) 的韻母是 üe。'
       },
       {
-        id: 208,
-        category: '詞語韻母辨析',
-        question: '「鴛鴦」中「鴛」的韻母是？',
-        options: ['üan', 'ün', 'ian'],
-        correctIndex: 0,
-        explanation: '「鴛」(yuān) 的韻母是 üan。'
-      },
-      {
-        id: 209,
-        category: '詞語韻母辨析',
-        question: '「頭暈」中「暈」的韻母是？',
-        options: ['ün', 'üe', 'un'],
-        correctIndex: 0,
-        explanation: '「暈」(yūn) 的韻母是 ün。'
-      },
-      {
-        id: 210,
-        category: '韻母規則',
-        question: '「閱讀」的「閱」對應音節 yuè，原韻母是？',
-        options: ['üe', 'ie', 'üan'],
-        correctIndex: 0,
-        explanation: 'yuè 原韻母是 üe。'
-      },
-      {
         id: 213,
         category: '音節拼寫',
         question: '韻母「üe」自成音節的寫法是？',
@@ -214,74 +150,131 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 3,
-    title: '第三課：打電話',
-    subtitle: '聲母與 ü 行韻母組合',
+    title: '第三課：打電話 (拼寫篇)',
+    subtitle: 'ü 行與聲母組合規則',
     icon: '📞',
     animal: '🐱',
     questions: [
       {
-        id: 304,
-        category: '詞語韻母辨析',
-        question: '「訓練班」中「訓」的韻母是？',
-        options: ['ün', 'üe', 'un'],
+        id: 301,
+        category: '聲母組合',
+        question: '「區」的音節是 qū，它的原組合是？',
+        options: ['q + ü', 'q + u', 'q + i'],
         correctIndex: 0,
-        explanation: '「訓」(xùn) 的韻母是 ün。'
+        explanation: 'j, q, x 見到 ü，兩點要去掉喔！'
       },
       {
-        id: 306,
+        id: 302,
         category: '聲母組合',
-        question: '「區」的音節是 qū，其組合是？',
-        options: ['q + ü', 'q + u', 'q + ie'],
-        correctIndex: 0,
-        explanation: 'j/q/x 與 ü 相拼要去掉兩點。'
+        question: '「全」的音節是 quán，它的原組合是？',
+        options: ['q + uan', 'q + üan', 'q + ian'],
+        correctIndex: 1,
+        explanation: '小 ü 見到 q，脫掉帽子變 uan 的樣子。'
       },
       {
-        id: 307,
+        id: 303,
         category: '聲母組合',
-        question: '「學」的音節是 xué，其組合是？',
+        question: '「學」的音節是 xué，它的原組合是？',
         options: ['x + üe', 'x + ue', 'x + ie'],
         correctIndex: 0,
-        explanation: 'x 與 üe 相拼要去掉兩點。'
+        explanation: 'x 也是 ü 的好朋友，拼寫時要去掉兩點。'
       },
       {
-        id: 308,
+        id: 304,
         category: '聲母組合',
-        question: '「均」的音節是 jūn，其組合是？',
-        options: ['j + ün', 'j + un', 'j + in'],
-        correctIndex: 0,
-        explanation: 'j 與 ün 相拼要去掉兩點。'
+        question: '「均」的音節是 jūn，它的原組合是？',
+        options: ['j + un', 'j + ün', 'j + in'],
+        correctIndex: 1,
+        explanation: 'j 見到 ün，兩點也要去掉。'
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: '第三課：打電話 (標調篇)',
+    subtitle: '標調位置與實戰規則',
+    icon: '🎯',
+    animal: '🦒',
+    questions: [
+      {
+        id: 501,
+        category: '標調位置',
+        question: '在音節「xiu」(休) 中，聲調應該標在？',
+        options: ['標在 i 上', '標在 u 上', '標在 x 上'],
+        correctIndex: 1,
+        explanation: 'i、u 並列標在後，誰在後面標誰！'
       },
       {
-        id: 309,
-        category: '聲母組合',
-        question: '「全」的音節是 quán，其組合是？',
-        options: ['q + üan', 'q + uan', 'q + ian'],
-        correctIndex: 0,
-        explanation: 'q 與 üan 相拼要去掉兩點。'
+        id: 502,
+        category: '標調位置',
+        question: '在音節「qiu」(球) 中，聲調應該標在？',
+        options: ['標在 i 上', '標在 u 上', '標在 q 上'],
+        correctIndex: 1,
+        explanation: 'i、u 並列標在後，u 在後面。'
       },
       {
-        id: 310,
-        category: '拼寫辨析',
-        question: '「n」與「üe」拼寫的音節是？',
-        options: ['nüe', 'nue', 'nie'],
-        correctIndex: 0,
-        explanation: 'n/l 與 ü 行拼寫時保留兩點。'
+        id: 503,
+        category: '標調位置',
+        question: '在音節「dui」(對) 中，聲調應該標在？',
+        options: ['標在 u 上', '標在 i 上', '標在 d 上'],
+        correctIndex: 1,
+        explanation: 'i、u 並列標在後，這裡 i 在後面。'
       },
       {
-        id: 311,
-        category: '拼寫辨析',
-        question: '「l」與「ü」拼寫的音節是？',
-        options: ['lü', 'lu', 'li'],
-        correctIndex: 0,
-        explanation: 'l 與 ü 相拼保留兩點。'
+        id: 504,
+        category: '標調位置',
+        question: '在音節「hui」(會) 中，聲調應該標在？',
+        options: ['標在 u 上', '標在 i 上', '標在 h 上'],
+        correctIndex: 1,
+        explanation: 'i、u 並列標在後。'
       },
       {
-        id: 314,
-        category: '拼寫組合',
-        question: '「捲曲」中的「捲」(juǎn) 是哪種組合？',
-        options: ['j + üan', 'j + uan', 'j + ian'],
+        id: 505,
+        category: '標調位置',
+        question: '在音節「jue」(決) 中，聲調應該標在？',
+        options: ['標在 u 上', '標在 e 上', '標在 j 上'],
+        correctIndex: 1,
+        explanation: '沒 a 找 o、e。這裡有 e 標在 e 上。'
+      },
+      {
+        id: 506,
+        category: '標調實戰',
+        question: '「柳」(liu) 的第三聲，正確寫法是？',
+        options: ['lǐu', 'liǔ', 'liù'],
+        correctIndex: 1,
+        explanation: '標在後面那個字母上。'
+      },
+      {
+        id: 507,
+        category: '標調實戰',
+        question: '「桂」(gui) 的第四聲，正確寫法是？',
+        options: ['guì', 'gùi', 'guĭ'],
         correctIndex: 0,
-        explanation: 'j 與 üan 相拼。'
+        explanation: '標在 i 上。'
+      },
+      {
+        id: 508,
+        category: '標調順序',
+        question: '拼音標調的正確優先順序是？',
+        options: ['a o e i u ü', 'a e o i u ü', 'i u ü a o e'],
+        correctIndex: 0,
+        explanation: 'a o e i u ü 是標準順序。'
+      },
+      {
+        id: 509,
+        category: '標調規則',
+        question: '當「i 和 u 在一起」時，聲調要怎麼標？',
+        options: ['標在 i 上', '標在後一個字母上', '標在 u 上'],
+        correctIndex: 1,
+        explanation: '誰在後面標誰頭上。'
+      },
+      {
+        id: 510,
+        category: '標調辨析',
+        question: '下列音節標調正確的是？',
+        options: ['qíu (球)', 'xiū (休)', 'dùi (對)'],
+        correctIndex: 1,
+        explanation: '只有 xiū 遵循了 i、u 並列標在後的規則。'
       }
     ]
   },
@@ -303,18 +296,18 @@ export const LESSONS: Lesson[] = [
       {
         id: 402,
         category: '韻母辨識',
-        question: '「購物商場」中「物」的韻母是？',
-        options: ['u', 'iu', 'ou'],
+        question: '「購物商場」中「場」的韻母是？',
+        options: ['ang', 'iang', 'uang'],
         correctIndex: 0,
-        explanation: '「物」(wù) 的韻母是 u。'
+        explanation: '「場」(chǎng) 的韻母是 ang。'
       },
       {
         id: 403,
         category: '韻母辨識',
-        question: '「社區」中「社」的韻母是？',
-        options: ['e', 'i', 'ie'],
+        question: '「社區」中「區」的韻母是？',
+        options: ['ü', 'u', 'i'],
         correctIndex: 0,
-        explanation: '「社」(shè) 的韻母是 e。'
+        explanation: '「區」(qū) 的韻母是 ü。'
       },
       {
         id: 404,
@@ -327,10 +320,10 @@ export const LESSONS: Lesson[] = [
       {
         id: 405,
         category: '韻母辨識',
-        question: '「齊全」中「齊」的韻母是？',
-        options: ['i', 'iu', 'iai'],
+        question: '「齊全」中「全」的韻母是？',
+        options: ['üan', 'uan', 'an'],
         correctIndex: 0,
-        explanation: '「齊」(qí) 的韻母是 i。'
+        explanation: '「全」(quán) 的韻母是 üan。'
       },
       {
         id: 406,
@@ -339,22 +332,6 @@ export const LESSONS: Lesson[] = [
         options: ['an', 'ian', 'uan'],
         correctIndex: 1,
         explanation: '「面」(miàn) 的韻母是 ian。'
-      },
-      {
-        id: 407,
-        category: '韻母辨識',
-        question: '「旁邊兒」中「邊」的韻母是？',
-        options: ['an', 'ian', 'uan'],
-        correctIndex: 1,
-        explanation: '「邊」(biān) 的韻母是 ian。'
-      },
-      {
-        id: 408,
-        category: '韻母辨識',
-        question: '「方便」中「便」的韻母是？',
-        options: ['an', 'ian', 'uan'],
-        correctIndex: 1,
-        explanation: '「便」(biàn) 的韻母是 ian。'
       }
     ]
   }
