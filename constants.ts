@@ -287,9 +287,9 @@ export const LESSONS: Lesson[] = [
   },
   {
     id: 4,
-    title: '第四課：生活詞語',
+    title: 'Bonus：生活詞語',
     subtitle: '常用詞語拼音練習',
-    icon: '🏢',
+    icon: '🎁',
     animal: '🐹',
     questions: [
       {
