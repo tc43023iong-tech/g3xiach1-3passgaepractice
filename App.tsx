@@ -174,8 +174,9 @@ const App: React.FC = () => {
             </div>
 
             <div className="bg-white rounded-[2.5rem] p-8 shadow-2xl border-b-[12px] border-blue-100 relative overflow-hidden">
-              <div className="mb-2">
+              <div className="flex justify-between items-center mb-4">
                 <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest bg-blue-50 px-2 py-0.5 rounded-full">{currentQuestion.category}</span>
+                <span className="text-sm font-black text-slate-300">{currentIndex + 1} / {currentLesson.questions.length}</span>
               </div>
               
               <p className="text-2xl font-black text-slate-700 mb-8 leading-tight">
