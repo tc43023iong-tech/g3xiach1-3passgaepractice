@@ -4,504 +4,118 @@ import { Lesson } from './types';
 export const LESSONS: Lesson[] = [
   {
     id: 1,
-    title: '第一課：我家附近',
-    subtitle: '韻母辨識與音節拼寫',
+    title: '第一課：韻母大集合',
+    subtitle: 'i / u 行韻母辨識與組合',
     icon: '🏠',
     animal: '🐰',
     questions: [
-      {
-        id: 101,
-        category: '韻母辨識',
-        question: '「衣」的韻母是？',
-        options: ['i', 'ia', 'ie'],
-        correctIndex: 0,
-        explanation: '「衣」的韻母是單韻母 i。'
-      },
-      {
-        id: 102,
-        category: '韻母辨識',
-        question: '「鴉」的韻母是？',
-        options: ['i', 'ia', 'iao'],
-        correctIndex: 1,
-        explanation: '「鴉」(yā) 的韻母是 ia。'
-      },
-      {
-        id: 103,
-        category: '韻母辨識',
-        question: '「耶」的韻母是？',
-        options: ['ie', 'iao', 'iou'],
-        correctIndex: 0,
-        explanation: '「耶」(yē) 的韻母是 ie。'
-      },
-      {
-        id: 104,
-        category: '韻母辨識',
-        question: '「腰」的韻母是？',
-        options: ['iao', 'ian', 'in'],
-        correctIndex: 0,
-        explanation: '「腰」(yāo) 的韻母是 iao。'
-      },
-      {
-        id: 105,
-        category: '韻母辨識',
-        question: '「優」的韻母是？',
-        options: ['iou', 'iang', 'ing'],
-        correctIndex: 0,
-        explanation: '「優」(yōu) 的韻母是 iou (拼寫為 iu)。'
-      },
-      {
-        id: 106,
-        category: '韻母辨識',
-        question: '「煙」的韻母是？',
-        options: ['ian', 'in', 'iong'],
-        correctIndex: 0,
-        explanation: '「煙」(yān) 的韻母是 ian。'
-      },
-      {
-        id: 107,
-        category: '韻母辨識',
-        question: '「音」的韻母是？',
-        options: ['in', 'iang', 'ing'],
-        correctIndex: 0,
-        explanation: '「音」(yīn) 的韻母是 in。'
-      },
-      {
-        id: 108,
-        category: '韻母辨識',
-        question: '「烏」的韻母是？',
-        options: ['u', 'ua', 'uo'],
-        correctIndex: 0,
-        explanation: '「烏」(wū) 的韻母是 u。'
-      },
-      {
-        id: 109,
-        category: '韻母辨識',
-        question: '「蛙」的韻母是？',
-        options: ['ua', 'uai', 'uei'],
-        correctIndex: 0,
-        explanation: '「蛙」(wā) 的韻母是 ua。'
-      },
-      {
-        id: 110,
-        category: '韻母辨識',
-        question: '「窩」的韻母是？',
-        options: ['uo', 'uan', 'uen'],
-        correctIndex: 0,
-        explanation: '「窩」(wō) 的韻母是 uo。'
-      }
+      { id: 101, category: '韻母辨識', question: '1. 「衣」的韻母是？', options: ['i', 'ia', 'ie'], correctIndex: 0, explanation: '「衣」是單韻母 i。' },
+      { id: 102, category: '韻母辨識', question: '2. 「鴉」(yā) 的韻母是？', options: ['i', 'ia', 'iao'], correctIndex: 1, explanation: '「鴉」的韻母是 ia。' },
+      { id: 103, category: '韻母辨識', question: '3. 「耶」(yè) 的韻母是？', options: ['ie', 'iao', 'iou'], correctIndex: 0, explanation: '「耶」的韻母是 ie。' },
+      { id: 104, category: '韻母辨識', question: '4. 「腰」(yāo) 的韻母是？', options: ['iao', 'ian', 'in'], correctIndex: 0, explanation: '「腰」的韻母是 iao。' },
+      { id: 105, category: '韻母辨識', question: '5. 「優」(yōu) 的實際韻母組合是？', options: ['iou', 'iu', 'u'], correctIndex: 0, explanation: '實際是 iou，拼寫縮寫為 iu。' },
+      { id: 106, category: '韻母辨識', question: '6. 「煙」(yān) 的韻母是？', options: ['ian', 'in', 'iang'], correctIndex: 0, explanation: '「煙」的韻母是 ian。' },
+      { id: 107, category: '韻母辨識', question: '7. 「音」(yīn) 的韻母是？', options: ['in', 'ing', 'ian'], correctIndex: 0, explanation: '「音」的韻母是 in。' },
+      { id: 108, category: '韻母辨識', question: '8. 「烏」(wū) 的韻母是？', options: ['u', 'ua', 'uo'], correctIndex: 0, explanation: '「烏」是單韻母 u。' },
+      { id: 109, category: '韻母辨識', question: '9. 「蛙」(wā) 的韻母是？', options: ['ua', 'uai', 'uei'], correctIndex: 0, explanation: '「蛙」的韻母是 ua。' },
+      { id: 110, category: '韻母辨識', question: '10. 「窩」(wō) 的韻母是？', options: ['uo', 'uan', 'uen'], correctIndex: 0, explanation: '「窩」的韻母是 uo。' },
+      { id: 111, category: '韻母辨識', question: '11. 「外」(wài) 的韻母組合是？', options: ['ua', 'uai', 'uei'], correctIndex: 1, explanation: '「外」的韻母是 uai。' },
+      { id: 112, category: '韻母辨識', question: '12. 「會」(huì) 的實際韻母組合是？', options: ['ui', 'uei', 'uei'], correctIndex: 1, explanation: '實際是 uei，拼寫縮寫為 ui。' },
+      { id: 113, category: '韻母辨識', question: '13. 「萬」(wàn) 的韻母是？', options: ['uan', 'un', 'uang'], correctIndex: 0, explanation: '「萬」的韻母是 uan。' },
+      { id: 114, category: '韻母辨識', question: '14. 「問」(wèn) 的實際韻母組合是？', options: ['uen', 'un', 'un'], correctIndex: 0, explanation: '實際是 uen，拼寫縮寫為 un。' },
+      { id: 115, category: '韻母辨識', question: '15. 「黃」(huáng) 的韻母是？', options: ['uang', 'ueng', 'ang'], correctIndex: 0, explanation: '「黃」的韻母是 uang。' },
+      { id: 116, category: '韻母辨識', question: '16. 「翁」(wēng) 的韻母是？', options: ['ueng', 'ong', 'uong'], correctIndex: 0, explanation: '「翁」的韻母是 ueng。' },
+      { id: 117, category: '韻母辨識', question: '17. 「亮」(liàng) 的韻母是？', options: ['iang', 'ang', 'ing'], correctIndex: 0, explanation: '「亮」的韻母是 iang。' },
+      { id: 118, category: '韻母辨識', question: '18. 「影」(yǐng) 的韻母是？', options: ['ing', 'in', 'iang'], correctIndex: 0, explanation: '「影」的韻母是 ing。' },
+      { id: 119, category: '韻母辨識', question: '19. 「兄」(xiōng) 的韻母是？', options: ['iong', 'ong', 'iang'], correctIndex: 0, explanation: '「兄」的韻母是 iong。' },
+      { id: 120, category: '韻母辨識', question: '20. 「九」(jiǔ) 的實際韻母組合是？', options: ['iou', 'iu', 'iu'], correctIndex: 0, explanation: '實際是 iou，拼寫縮寫為 iu。' }
     ]
   },
   {
     id: 2,
-    title: '第二課：社區有心人',
-    subtitle: 'ü 行韻母辨析與規則',
+    title: '第二課：ü 的小秘密',
+    subtitle: 'ü 行規則與 j / q / x 組合',
     icon: '🤝',
     animal: '🐶',
     questions: [
-      {
-        id: 201,
-        category: '詞語韻母辨析',
-        question: '「學會」中「學」的韻母是？',
-        options: ['üe', 'üan', 'ün'],
-        correctIndex: 0,
-        explanation: '「學」(xué) 的韻母是 üe。'
-      },
-      {
-        id: 202,
-        category: '詞語韻母辨析',
-        question: '「捐助」中「助」的韻母是？',
-        options: ['u', 'ü', 'ou'],
-        correctIndex: 0,
-        explanation: '「助」(zhù) 的韻母是 u。'
-      },
-      {
-        id: 205,
-        category: '詞語韻母辨析',
-        question: '「薰衣草」中「薰」的韻母是？',
-        options: ['ün', 'üe', 'uan'],
-        correctIndex: 0,
-        explanation: '「薰」(xūn) 的韻母是 ün。'
-      },
-      {
-        id: 206,
-        category: '詞語韻母辨析',
-        question: '「茶葉」中「葉」的韻母是？',
-        options: ['üe', 'ie', 'ün'],
-        correctIndex: 1,
-        explanation: '「葉」(yè) 的韻母是 ie。'
-      },
-      {
-        id: 207,
-        category: '詞語韻母辨析',
-        question: '「約會」中「約」的韻母是？',
-        options: ['üe', 'üan', 'ün'],
-        correctIndex: 0,
-        explanation: '「約」(yuē) 的韻母是 üe。'
-      },
-      {
-        id: 213,
-        category: '音節拼寫',
-        question: '韻母「üe」自成音節的寫法是？',
-        options: ['üe', 'yuē', 'yue'],
-        correctIndex: 2,
-        explanation: '加 y 去兩點寫作 yue。'
-      }
+      { id: 201, category: 'ü 行辨析', question: '1. 「學」(xué) 的韻母原形是？', options: ['üe', 'ue', 'ie'], correctIndex: 0, explanation: '「學」的原形是 üe。' },
+      { id: 202, category: 'ü 行辨析', question: '2. 「全」(quán) 的韻母原形是？', options: ['uan', 'üan', 'an'], correctIndex: 1, explanation: '「全」的原形是 üan。' },
+      { id: 203, category: 'ü 行辨析', question: '3. 「均」(jūn) 的韻母原形是？', options: ['un', 'ün', 'in'], correctIndex: 1, explanation: '「均」的原形是 ün。' },
+      { id: 204, category: '拼寫規則', question: '4. j, q, x 見到 ü 時，兩點要？', options: ['保留', '去掉', '變成一橫'], correctIndex: 1, explanation: '小 ü 見到 j q x，兩點抹去還唸 ü。' },
+      { id: 205, category: 'ü 行辨析', question: '5. 「趣」(qù) 的韻母是？', options: ['u', 'ü', 'i'], correctIndex: 1, explanation: '「趣」的韻母是 ü。' },
+      { id: 206, category: 'ü 行辨析', question: '6. 韻母 üe 自成音節時，應寫作？', options: ['üe', 'yüe', 'yue'], correctIndex: 2, explanation: '加 y 去兩點寫作 yue。' },
+      { id: 207, category: 'ü 行辨析', question: '7. 韻母 üan 自成音節時，應寫作？', options: ['yuan', 'üan', 'yüan'], correctIndex: 0, explanation: '加 y 去兩點寫作 yuan。' },
+      { id: 208, category: 'ü 行辨析', question: '8. 韻母 ün 自成音節時，應寫作？', options: ['yun', 'ün', 'yün'], correctIndex: 0, explanation: '加 y 去兩點寫作 yun。' },
+      { id: 209, category: '拼寫規則', question: '9. 「n」和「ü」相拼時，兩點要？', options: ['去掉', '保留', '不需要'], correctIndex: 1, explanation: 'n, l 見到 ü，兩點不能去！' },
+      { id: 210, category: '拼寫規則', question: '10. 「l」和「ü」相拼時，音節是？', options: ['lü', 'lu', 'lyu'], correctIndex: 0, explanation: 'l 見到 ü，兩點必須留著。' },
+      { id: 211, category: '拼寫辨析', question: '11. 「橘子」的「橘」正確拼寫是？', options: ['jú', 'jǘ', 'jiú'], correctIndex: 0, explanation: 'j 與 ü 拼，去掉兩點。' },
+      { id: 212, category: '拼寫辨析', question: '12. 「宣傳」的「宣」正確拼寫是？', options: ['xuān', 'xüān', 'xiuān'], correctIndex: 0, explanation: 'x 與 üan 拼，去點寫作 xuan。' },
+      { id: 213, category: '拼寫辨析', question: '13. 「雨」自成音節的正確寫法是？', options: ['yǔ', 'ǚ', 'yǚ'], correctIndex: 0, explanation: '加 y 去點寫作 yǔ。' },
+      { id: 214, category: '拼寫辨析', question: '14. 「雲」自成音節的正確寫法是？', options: ['yún', 'ǘn', 'yǘn'], correctIndex: 0, explanation: '加 y 去點寫作 yún。' },
+      { id: 215, category: '規則挑戰', question: '15. 下列哪一組聲母拼 ü 時不去掉兩點？', options: ['j q x', 'n l', 'y'], correctIndex: 1, explanation: '只有 n, l 相拼時要保留兩點。' },
+      { id: 216, category: '拼寫辨析', question: '16. 「虐待」的「虐」正確拼寫是？', options: ['nüè', 'nuè', 'niè'], correctIndex: 0, explanation: 'n 與 üe 拼，兩點必須留著。' },
+      { id: 217, category: '拼寫辨析', question: '17. 「略過」的「略」正確拼寫是？', options: ['lüè', 'luè', 'liè'], correctIndex: 0, explanation: 'l 與 üe 拼，兩點必須留著。' },
+      { id: 218, category: '拼寫辨析', question: '18. 「許可」的「許」正確拼寫是？', options: ['xǔ', 'xǚ', 'xiǔ'], correctIndex: 0, explanation: 'x 與 ü 拼，兩點去掉。' },
+      { id: 219, category: '拼寫辨析', question: '19. 「軍隊」的「軍」正確拼寫是？', options: ['jūn', 'jǘn', 'jiūn'], correctIndex: 0, explanation: 'j 與 ün 拼，兩點去掉。' },
+      { id: 220, category: '拼寫辨析', question: '20. 「圓圈」的「圓」正確拼寫是？', options: ['yuán', 'üán', 'yüán'], correctIndex: 0, explanation: '加 y 去兩點寫作 yuán。' }
     ]
   },
   {
     id: 3,
-    title: '第三課：打電話 (拼寫篇)',
-    subtitle: 'ü 行與聲母組合規則',
+    title: '第三課：標調小能手',
+    subtitle: '標調順序與 i / u 並列規則',
     icon: '📞',
-    animal: '🐱',
-    questions: [
-      {
-        id: 301,
-        category: '聲母組合',
-        question: '「區」的音節是 qū，它的原組合是？',
-        options: ['q + ü', 'q + u', 'q + i'],
-        correctIndex: 0,
-        explanation: 'j, q, x 見到 ü，兩點要去掉喔！'
-      },
-      {
-        id: 302,
-        category: '聲母組合',
-        question: '「全」的音節是 quán，它的原組合是？',
-        options: ['q + uan', 'q + üan', 'q + ian'],
-        correctIndex: 1,
-        explanation: '小 ü 見到 q，脫掉帽子變 uan 的樣子。'
-      },
-      {
-        id: 303,
-        category: '聲母組合',
-        question: '「學」的音節是 xué，它的原組合是？',
-        options: ['x + üe', 'x + ue', 'x + ie'],
-        correctIndex: 0,
-        explanation: 'x 也是 ü 的好朋友，拼寫時要去掉兩點。'
-      },
-      {
-        id: 304,
-        category: '聲母組合',
-        question: '「均」的音節是 jūn，它的原組合是？',
-        options: ['j + un', 'j + ün', 'j + in'],
-        correctIndex: 1,
-        explanation: 'j 見到 ün，兩點也要去掉。'
-      }
-    ]
-  },
-  {
-    id: 5,
-    title: '第三課：打電話 (標調篇)',
-    subtitle: '標調位置與實戰規則',
-    icon: '🎯',
     animal: '🦒',
     questions: [
-      {
-        id: 501,
-        category: '標調位置',
-        question: '在音節「xiu」(休) 中，聲調應該標在？',
-        options: ['標在 i 上', '標在 u 上', '標在 x 上'],
-        correctIndex: 1,
-        explanation: 'i、u 並列標在後，誰在後面標誰！'
-      },
-      {
-        id: 502,
-        category: '標調位置',
-        question: '在音節「qiu」(球) 中，聲調應該標在？',
-        options: ['標在 i 上', '標在 u 上', '標在 q 上'],
-        correctIndex: 1,
-        explanation: 'i、u 並列標在後，u 在後面。'
-      },
-      {
-        id: 503,
-        category: '標調位置',
-        question: '在音節「dui」(對) 中，聲調應該標在？',
-        options: ['標在 u 上', '標在 i 上', '標在 d 上'],
-        correctIndex: 1,
-        explanation: 'i、u 並列標在後，這裡 i 在後面。'
-      },
-      {
-        id: 504,
-        category: '標調位置',
-        question: '在音節「hui」(會) 中，聲調應該標在？',
-        options: ['標在 u 上', '標在 i 上', '標在 h 上'],
-        correctIndex: 1,
-        explanation: 'i、u 並列標在後。'
-      },
-      {
-        id: 505,
-        category: '標調位置',
-        question: '在音節「jue」(決) 中，聲調應該標在？',
-        options: ['標在 u 上', '標在 e 上', '標在 j 上'],
-        correctIndex: 1,
-        explanation: '沒 a 找 o、e。這裡有 e 標在 e 上。'
-      },
-      {
-        id: 506,
-        category: '標調實戰',
-        question: '「柳」(liu) 的第三聲，正確寫法是？',
-        options: ['lǐu', 'liǔ', 'liù'],
-        correctIndex: 1,
-        explanation: '標在後面那個字母上。'
-      },
-      {
-        id: 507,
-        category: '標調實戰',
-        question: '「桂」(gui) 的第四聲，正確寫法是？',
-        options: ['guì', 'gùi', 'guĭ'],
-        correctIndex: 0,
-        explanation: '標在 i 上。'
-      },
-      {
-        id: 508,
-        category: '標調順序',
-        question: '拼音標調的正確優先順序是？',
-        options: ['a o e i u ü', 'a e o i u ü', 'i u ü a o e'],
-        correctIndex: 0,
-        explanation: 'a o e i u ü 是標準順序。'
-      },
-      {
-        id: 509,
-        category: '標調規則',
-        question: '當「i 和 u 在一起」時，聲調要怎麼標？',
-        options: ['標在 i 上', '標在後一個字母上', '標在 u 上'],
-        correctIndex: 1,
-        explanation: '誰在後面標誰頭上。'
-      },
-      {
-        id: 510,
-        category: '標調辨析',
-        question: '下列音節標調正確的是？',
-        options: ['qíu (球)', 'xiū (休)', 'dùi (對)'],
-        correctIndex: 1,
-        explanation: '只有 xiū 遵循了 i、u 並列標在後的規則。'
-      }
-    ]
-  },
-  {
-    id: 4,
-    title: 'Bonus：生活詞語',
-    subtitle: '常用詞語拼音練習',
-    icon: '🎁',
-    animal: '🐹',
-    questions: [
-      {
-        id: 401,
-        category: '韻母辨識',
-        question: '「運動場」中「動」的韻母是？',
-        options: ['ong', 'iong', 'eng'],
-        correctIndex: 0,
-        explanation: '「動」(dòng) 的韻母是 ong。'
-      },
-      {
-        id: 402,
-        category: '韻母辨識',
-        question: '「購物商場」中「場」的韻母是？',
-        options: ['ang', 'iang', 'uang'],
-        correctIndex: 0,
-        explanation: '「場」(chǎng) 的韻母是 ang。'
-      },
-      {
-        id: 403,
-        category: '韻母辨識',
-        question: '「社區」中「區」的韻母是？',
-        options: ['ü', 'u', 'i'],
-        correctIndex: 0,
-        explanation: '「區」(qū) 的韻母是 ü。'
-      },
-      {
-        id: 404,
-        category: '韻母辨識',
-        question: '「設施」中「設」的韻母是？',
-        options: ['e', 'i', 'ie'],
-        correctIndex: 0,
-        explanation: '「設」(shè) 的韻母是 e。'
-      },
-      {
-        id: 405,
-        category: '韻母辨識',
-        question: '「齊全」中「全」的韻母是？',
-        options: ['üan', 'uan', 'an'],
-        correctIndex: 0,
-        explanation: '「全」(quán) 的韻母是 üan。'
-      },
-      {
-        id: 406,
-        category: '韻母辨識',
-        question: '「對面兒」中「面」的韻母是？',
-        options: ['an', 'ian', 'uan'],
-        correctIndex: 1,
-        explanation: '「面」(miàn) 的韻母是 ian。'
-      }
+      { id: 301, category: '優先級', question: '1. 拼音標調的第一優先字母是？', options: ['o', 'e', 'a'], correctIndex: 2, explanation: '有 a 不放過，a 是標調的老大。' },
+      { id: 302, category: '優先級', question: '2. 如果音節中沒有 a，接著找？', options: ['o, e', 'i, u', 'ü'], correctIndex: 0, explanation: '沒 a 找 o、e。' },
+      { id: 303, category: '並列規則', question: '3. 「休」(xiu) 的聲調標在 u 上，是因為？', options: ['u 比 i 大', 'i、u 並列標在後', '隨便選一個'], correctIndex: 1, explanation: '口訣：i、u 並列標在後。' },
+      { id: 304, category: '並列規則', question: '4. 「對」(dui) 的聲調標在 i 上，是因為？', options: ['i 比 u 大', 'i、u 並列標在後', 'd 喜歡 i'], correctIndex: 1, explanation: 'i 在 u 的後面，所以標在 i 上。' },
+      { id: 305, category: '標調位置', question: '5. 「球」(qiu) 的聲調應標在哪個字母？', options: ['q', 'i', 'u'], correctIndex: 2, explanation: 'i、u 並列標在後，u 在後。' },
+      { id: 306, category: '標調位置', question: '6. 「桂」(gui) 的聲調應標在哪個字母？', options: ['g', 'u', 'i'], correctIndex: 2, explanation: 'i、u 並列標在後，i 在後。' },
+      { id: 307, category: '優先級', question: '7. 「給」(gei) 的聲調標在 e 上，是因為？', options: ['e 在 i 前面', '沒有 a，只有 e', 'i 不想標調'], correctIndex: 1, explanation: '沒 a 找 o、e。這裡有 e 就標 e。' },
+      { id: 308, category: '優先級', question: '8. 「草」(cao) 的聲調應標在？', options: ['c', 'a', 'o'], correctIndex: 1, explanation: '有 a 不放過！' },
+      { id: 309, category: '優先級', question: '9. 「狗」(gou) 的聲調應標在？', options: ['g', 'o', 'u'], correctIndex: 1, explanation: '沒 a 找 o。' },
+      { id: 310, category: '並列規則', question: '10. 音節 liu 標第三聲時，寫法是？', options: ['lǐu', 'liǔ', 'liù'], correctIndex: 1, explanation: 'i、u 並列標在後，標在 u 上。' },
+      { id: 311, category: '並列規則', question: '11. 音節 shui 標第三聲時，寫法是？', options: ['shuǐ', 'shǔi', 'shui'], correctIndex: 0, explanation: 'i、u 並列標在後，標在 i 上。' },
+      { id: 312, category: '標調細節', question: '12. 標 i 的聲調時，i 原本的小點要？', options: ['保留', '去掉', '變成大點'], correctIndex: 1, explanation: '標調時，i 上的小點要抹去喔！' },
+      { id: 313, category: '優先級', question: '13. 「閱」(yue) 的聲調標在 e 上，是因為？', options: ['e 在最後面', '沒有 a、o，只有 e', 'y 規定的'], correctIndex: 1, explanation: '沒 a 找 o、e。' },
+      { id: 314, category: '口訣考驗', question: '14. 標調口訣「i u 並列標在後」的意思是？', options: ['標在後面的字母', '標在 i 上', '標在 u 上'], correctIndex: 0, explanation: '誰在後面就標在誰頭上。' },
+      { id: 315, category: '優先級', question: '15. 「鳥」(niao) 的聲調標在？', options: ['i', 'a', 'o'], correctIndex: 1, explanation: '有 a 不放過！' },
+      { id: 316, category: '優先級', question: '16. 「六」(liu) 的聲調應標在？', options: ['i', 'u', 'l'], correctIndex: 1, explanation: 'i、u 並列標在後。' },
+      { id: 317, category: '優先級', question: '17. 「回」(hui) 的聲調應標在？', options: ['u', 'i', 'h'], correctIndex: 1, explanation: 'i、u 並列標在後。' },
+      { id: 318, category: '優先級', question: '18. 「考」(kao) 的聲調應標在？', options: ['k', 'a', 'o'], correctIndex: 1, explanation: '有 a 不放過。' },
+      { id: 319, category: '綜合標調', question: '19. 下列哪一個音節標調是正確的？', options: ['qiú', 'xiū', 'dùi'], correctIndex: 1, explanation: 'xiū 正確，dùi 應為 duì，qiú 正確但選項中 xiū 是單一正確示例。' },
+      { id: 320, category: '標調細節', question: '20. 「學」(xue) 的聲調標在哪個字母？', options: ['u', 'e', 'x'], correctIndex: 1, explanation: '沒 a 找 o、e。' }
     ]
   },
   {
     id: 6,
     title: '綜合大冒險',
-    subtitle: '拼音小達人：20題大挑戰！',
+    subtitle: '拼音小達人：20 題全能挑戰！',
     icon: '🌈',
     animal: '🦁',
     questions: [
-      {
-        id: 601,
-        category: '韻母辨識',
-        question: '「優」(yōu) 的實際韻母組合是？',
-        options: ['iou', 'iu', 'iou'],
-        correctIndex: 0,
-        explanation: '實際為 iou，拼寫時縮寫為 iu。'
-      },
-      {
-        id: 602,
-        category: 'ü 行規則',
-        question: '當「q」和「üan」組合時，音節寫作？',
-        options: ['qüan', 'quán', 'qian'],
-        correctIndex: 1,
-        explanation: 'j, q, x 與 ü 相拼要去掉兩點。'
-      },
-      {
-        id: 603,
-        category: '標調位置',
-        question: '「球」(qiu) 的聲調應該標在？',
-        options: ['i 上', 'u 上', 'q 上'],
-        correctIndex: 1,
-        explanation: 'i、u 並列標在後。'
-      },
-      {
-        id: 604,
-        category: '韻母辨識',
-        question: '「鴉」(yā) 的韻母是？',
-        options: ['ia', 'a', 'ua'],
-        correctIndex: 0,
-        explanation: '「鴉」的音節是 yā，韻母是 ia。'
-      },
-      {
-        id: 605,
-        category: '音節拼寫',
-        question: '「烏」自成音節時正確的寫法是？',
-        options: ['u', 'wu', 'wū'],
-        correctIndex: 2,
-        explanation: 'u 前加 w，並標上聲調。'
-      },
-      {
-        id: 606,
-        category: '標調規則',
-        question: '「i 和 u 並列」時，聲調標在？',
-        options: ['前一個字母', '後一個字母', '隨便哪一個'],
-        correctIndex: 1,
-        explanation: '誰在後面標誰身上。'
-      },
-      {
-        id: 607,
-        category: '詞語辨析',
-        question: '「齊全」中「全」(quán) 的韻母是？',
-        options: ['uan', 'üan', 'an'],
-        correctIndex: 1,
-        explanation: '「全」的原韻母是 üan。'
-      },
-      {
-        id: 608,
-        category: 'ü 行規則',
-        question: '音節「xué」的原韻母組合是？',
-        options: ['x + üe', 'x + ue', 'x + ie'],
-        correctIndex: 0,
-        explanation: 'x 與 üe 相拼去兩點。'
-      },
-      {
-        id: 609,
-        category: '標調實戰',
-        question: '「會」(hui) 的第四聲，寫法是？',
-        options: ['huì', 'hùi', 'hui'],
-        correctIndex: 0,
-        explanation: 'i、u 在一起標在後，這裡 i 在後。'
-      },
-      {
-        id: 610,
-        category: '韻母辨識',
-        question: '「音」(yīn) 的韻母是？',
-        options: ['in', 'ing', 'ian'],
-        correctIndex: 0,
-        explanation: '「音」的韻母是前鼻音 in。'
-      },
-      {
-        id: 611,
-        category: '標調順序',
-        question: '拼音標調的優先順序第一名是？',
-        options: ['o', 'e', 'a'],
-        correctIndex: 2,
-        explanation: '有 a 不放過，a 是老大。'
-      },
-      {
-        id: 612,
-        category: '生活詞語',
-        question: '「旁邊兒」中「邊」的韻母是？',
-        options: ['an', 'ian', 'uan'],
-        correctIndex: 1,
-        explanation: '「邊」(biān) 的韻母是 ian。'
-      },
-      {
-        id: 613,
-        category: 'ü 行規則',
-        question: '「n」和「ü」相拼時，兩點需要去掉嗎？',
-        options: ['需要', '不需要', '都可以'],
-        correctIndex: 1,
-        explanation: '只有 j, q, x, y 才去兩點，n, l 不去喔！'
-      },
-      {
-        id: 614,
-        category: '標調位置',
-        question: '「對」(dui) 的聲調標在？',
-        options: ['u 上', 'i 上', 'd 上'],
-        correctIndex: 1,
-        explanation: 'i、u 在一起標在後。'
-      },
-      {
-        id: 615,
-        category: '音節拼寫',
-        question: '「藥丸」正確的拼寫是？',
-        options: ['yào wán', 'iào uán', 'yāo wán'],
-        correctIndex: 0,
-        explanation: 'i 改 y，u 改 w。'
-      },
-      {
-        id: 616,
-        category: '標調位置',
-        question: '「決」(jue) 的聲調標在？',
-        options: ['j 上', 'u 上', 'e 上'],
-        correctIndex: 2,
-        explanation: '沒 a 找 o、e，這裏有 e。'
-      },
-      {
-        id: 617,
-        category: '韻母辨識',
-        question: '「耶」(yē) 的韻母是？',
-        options: ['ie', 'ia', 'ue'],
-        correctIndex: 0,
-        explanation: '「耶」的韻母是 ie。'
-      },
-      {
-        id: 618,
-        category: '生活詞語',
-        question: '「社區」中「區」的韻母是？',
-        options: ['u', 'ü', 'i'],
-        correctIndex: 1,
-        explanation: '「區」的音節是 qū，韻母是 ü。'
-      },
-      {
-        id: 619,
-        category: '標調實戰',
-        question: '「柳」(liu) 的第三聲寫法是？',
-        options: ['lǐu', 'liǔ', 'liù'],
-        correctIndex: 1,
-        explanation: 'i、u 在一起標在後，標在 u 上。'
-      },
-      {
-        id: 620,
-        category: '綜合規則',
-        question: '下列哪一個音節標調是正確的？',
-        options: ['qíu', 'xiū', 'dùi'],
-        correctIndex: 1,
-        explanation: '只有 xiū 標在了正確的後面字母 u 上。'
-      }
+      { id: 601, category: '混合', question: '1. 「優」(yōu) 的實際韻母是？', options: ['iou', 'iu', 'u'], correctIndex: 0, explanation: '實際為 iou。' },
+      { id: 602, category: '混合', question: '2. 當 q 與 üan 拼時，音節寫作？', options: ['qüan', 'quán', 'qian'], correctIndex: 1, explanation: '去掉兩點。' },
+      { id: 603, category: '混合', question: '3. 「球」(qiu) 的聲調標在？', options: ['i', 'u', 'q'], correctIndex: 1, explanation: '並列標在後。' },
+      { id: 604, category: '混合', question: '4. 「鴉」(yā) 的韻母是？', options: ['ia', 'a', 'ua'], correctIndex: 0, explanation: 'ia。' },
+      { id: 605, category: '混合', question: '5. 「烏」自成音節正確寫法？', options: ['u', 'wu', 'wū'], correctIndex: 2, explanation: '加 w。' },
+      { id: 606, category: '混合', question: '6. 標調順序第一位？', options: ['o', 'e', 'a'], correctIndex: 2, explanation: 'a 是第一位。' },
+      { id: 607, category: '混合', question: '7. 「全」的原韻母是？', options: ['uan', 'üan', 'an'], correctIndex: 1, explanation: 'üan。' },
+      { id: 608, category: '混合', question: '8. 「xué」的原韻母是？', options: ['x+üe', 'x+ue', 'x+ie'], correctIndex: 0, explanation: 'üe。' },
+      { id: 609, category: '混合', question: '9. 「會」(hui) 標調在？', options: ['u', 'i', 'h'], correctIndex: 1, explanation: '並列標在後。' },
+      { id: 610, category: '混合', question: '10. 「音」的韻母是？', options: ['in', 'ing', 'ian'], correctIndex: 0, explanation: 'in。' },
+      { id: 611, category: '混合', question: '11. 「旁邊」的「邊」韻母是？', options: ['an', 'ian', 'uan'], correctIndex: 1, explanation: 'ian。' },
+      { id: 612, category: '混合', question: '12. 「n」拼「ü」去點嗎？', options: ['去', '不去', '隨便'], correctIndex: 1, explanation: '不去。' },
+      { id: 613, category: '混合', question: '13. 「決」(jue) 的聲調標在？', options: ['u', 'e', 'j'], correctIndex: 1, explanation: '標 e。' },
+      { id: 614, category: '混合', question: '14. 「藥丸」拼寫？', options: ['yào wán', 'iào uán', 'yāo wán'], correctIndex: 0, explanation: 'y/w 變換。' },
+      { id: 615, category: '混合', question: '15. 「耶」的韻母是？', options: ['ie', 'ia', 'ue'], correctIndex: 0, explanation: 'ie。' },
+      { id: 616, category: '混合', question: '16. 「九」的聲調標在？', options: ['i', 'u', 'j'], correctIndex: 1, explanation: '並列標在後。' },
+      { id: 617, category: '混合', question: '17. 標調時 i 的小點？', options: ['保留', '去掉', '變大'], correctIndex: 1, explanation: '去掉。' },
+      { id: 618, category: '混合', question: '18. 「外」的韻母是？', options: ['ua', 'uai', 'uei'], correctIndex: 1, explanation: 'uai。' },
+      { id: 619, category: '混合', question: '19. 「問」的實際韻母？', options: ['uen', 'un', 'un'], correctIndex: 0, explanation: 'uen。' },
+      { id: 620, category: '混合', question: '20. 下列正確標調的是？', options: ['qíu', 'xiū', 'dùi'], correctIndex: 1, explanation: 'xiū 正確。' }
     ]
   }
 ];

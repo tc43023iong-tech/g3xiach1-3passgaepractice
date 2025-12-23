@@ -81,13 +81,13 @@ const App: React.FC = () => {
   };
 
   const getButtonClass = (index: number) => {
-    const base = "w-full p-5 mb-4 rounded-3xl border-4 transition-all duration-300 text-xl font-bold flex items-center justify-between shadow-md ";
+    const base = "w-full p-4 mb-3 rounded-2xl border-4 transition-all duration-300 text-lg font-bold flex items-center justify-between shadow-sm ";
     const q = currentLesson?.questions[currentIndex];
     
     if (!isAnswered || !q) {
       return base + (selectedAnswer === index 
         ? "border-yellow-400 bg-yellow-50 text-yellow-700 transform scale-[1.02]" 
-        : "border-white bg-white hover:border-blue-200 text-slate-600 hover:shadow-lg hover:scale-[1.01]");
+        : "border-white bg-white hover:border-blue-200 text-slate-600 hover:shadow-md hover:scale-[1.01]");
     }
     
     if (index === q.correctIndex) {
@@ -105,20 +105,18 @@ const App: React.FC = () => {
   const progressPercent = currentLesson ? (currentIndex / (currentLesson.questions.length - 1)) * 100 : 0;
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 bg-gradient-to-br from-blue-100 via-white to-pink-100 relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-100 via-white to-pink-100 relative overflow-hidden">
       {/* Background Decor */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-20">
         <div className="absolute top-[5%] left-[10%] text-7xl animate-float">☁️</div>
         <div className="absolute top-[15%] right-[15%] text-7xl animate-float-delayed">🌈</div>
         <div className="absolute bottom-[10%] left-[5%] text-7xl animate-float-delayed">🌻</div>
         <div className="absolute bottom-[20%] right-[10%] text-7xl animate-float">🦋</div>
-        <div className="absolute top-[40%] left-[2%] text-5xl animate-float">🍬</div>
-        <div className="absolute bottom-[40%] right-[2%] text-5xl animate-float-delayed">🍭</div>
       </div>
 
-      <div className="max-w-md w-full relative z-10">
+      <div className="max-w-2xl w-full relative z-10">
         {/* Header */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-8">
           <h1 className="text-5xl font-game text-blue-500 drop-shadow-md mb-2 tracking-wide">拼音趣學園</h1>
           <div className="inline-block bg-white/80 backdrop-blur-sm px-4 py-1 rounded-full shadow-sm">
              <p className="text-pink-400 text-sm font-black uppercase tracking-widest">一起快樂學拼音！</p>
@@ -127,119 +125,91 @@ const App: React.FC = () => {
 
         {/* State: LESSON_SELECT */}
         {appState === AppState.LESSON_SELECT && (
-          <div className="space-y-6 animate-fade-in">
-            <h2 className="text-2xl font-game text-slate-600 text-center mb-8">選擇一個星球開始冒險吧！</h2>
-            {LESSONS.map((lesson, idx) => (
-              <button
-                key={lesson.id}
-                onClick={() => selectLesson(lesson)}
-                className={`w-full rounded-[2.5rem] p-6 shadow-xl border-b-[12px] transition-all transform hover:-translate-y-2 flex items-center gap-6 text-left group bg-white
-                  ${idx % 3 === 0 ? 'border-blue-300' : idx % 3 === 1 ? 'border-green-300' : 'border-purple-300'}`}
-              >
-                <span className={`text-5xl p-4 rounded-3xl transition-transform group-hover:scale-110 
-                  ${idx % 3 === 0 ? 'bg-blue-50' : idx % 3 === 1 ? 'bg-green-50' : 'bg-purple-50'}`}>
-                  {lesson.icon}
-                </span>
-                <div className="flex-1">
-                  <h3 className="text-xl font-black text-slate-700 group-hover:text-blue-500 transition-colors">{lesson.title}</h3>
-                  <p className="text-slate-400 font-medium text-sm mt-1">{lesson.subtitle}</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <span className="text-3xl mb-1">{lesson.animal}</span>
-                  <span className="text-slate-200 text-xl group-hover:text-pink-300 transition-colors">➜</span>
-                </div>
-              </button>
-            ))}
+          <div className="animate-fade-in">
+            <h2 className="text-2xl font-game text-slate-600 text-center mb-8">選擇一個單元開始練習吧！</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {LESSONS.map((lesson, idx) => (
+                <button
+                  key={lesson.id}
+                  onClick={() => selectLesson(lesson)}
+                  className={`rounded-[2rem] p-5 shadow-lg border-b-[8px] transition-all transform hover:-translate-y-1 flex items-center gap-4 text-left group bg-white
+                    ${idx % 4 === 0 ? 'border-blue-300' : idx % 4 === 1 ? 'border-green-300' : idx % 4 === 2 ? 'border-purple-300' : 'border-pink-300'}`}
+                >
+                  <span className="text-4xl group-hover:scale-110 transition-transform">{lesson.icon}</span>
+                  <div className="flex-1 overflow-hidden">
+                    <h3 className="text-lg font-black text-slate-700 truncate">{lesson.title}</h3>
+                    <p className="text-slate-400 font-medium text-xs mt-0.5 truncate">{lesson.subtitle}</p>
+                  </div>
+                  <span className="text-2xl">{lesson.animal}</span>
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
         {/* State: QUIZ */}
         {appState === AppState.QUIZ && currentLesson && currentQuestion && (
-          <div className="space-y-6 animate-fade-in relative">
-            {/* Back to Home Button */}
+          <div className="max-w-md mx-auto space-y-6 animate-fade-in relative">
             <button 
               onClick={goToLessonSelect}
-              className="absolute -top-12 -left-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border-2 border-white hover:bg-white transition-all text-lg font-black text-slate-500 active:scale-90 group z-20 flex items-center gap-2"
+              className="absolute -top-12 -left-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border-2 border-white hover:bg-white transition-all text-lg font-black text-slate-500 active:scale-90 z-20"
             >
-              🏠 <span>回到首頁</span>
+              🏠 <span>返回</span>
             </button>
 
-            <div className="flex justify-between items-end px-4 pt-4">
-              <div>
-                <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest block mb-1">CATEGORY</span>
-                <span className="text-sm font-bold text-slate-600 bg-blue-50 px-3 py-1 rounded-full">{currentQuestion.category}</span>
-              </div>
-              <div className="text-right">
-                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest block mb-1">PROGRESS</span>
-                <span className="text-sm font-black text-slate-700 bg-white px-3 py-1 rounded-full shadow-sm">{currentIndex + 1} / {currentLesson.questions.length}</span>
-              </div>
-            </div>
-            
-            {/* Animal Running Progress Bar */}
-            <div className="relative pt-12 px-2">
+            {/* Animal Progress */}
+            <div className="relative pt-10 px-2">
               <div 
-                className="absolute top-2 transition-all duration-700 ease-out z-10 text-5xl"
-                style={{ 
-                  left: `${progressPercent}%`, 
-                  transform: 'translateX(-50%)',
-                  animation: 'running 0.5s infinite alternate' 
-                }}
+                className="absolute top-0 transition-all duration-700 ease-out z-10 text-5xl"
+                style={{ left: `${progressPercent}%`, transform: 'translateX(-50%)', animation: 'running 0.5s infinite alternate' }}
               >
                 {currentLesson.animal}
               </div>
-              <div className="h-8 w-full bg-white/70 rounded-full overflow-hidden shadow-inner border-2 border-white relative p-1">
+              <div className="h-6 w-full bg-white/70 rounded-full overflow-hidden shadow-inner border-2 border-white relative p-1">
                 <div 
-                  className="h-full bg-gradient-to-r from-blue-300 via-emerald-300 to-yellow-300 transition-all duration-700 rounded-full shadow-sm" 
+                  className="h-full bg-gradient-to-r from-blue-300 to-yellow-300 transition-all duration-700 rounded-full" 
                   style={{ width: `${progressPercent}%` }}
                 ></div>
-                <div className="absolute top-0 right-3 text-lg font-black h-full flex items-center">🚩</div>
               </div>
             </div>
 
             <div className="bg-white rounded-[2.5rem] p-8 shadow-2xl border-b-[12px] border-blue-100 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-[4rem] -mr-8 -mt-8 opacity-50"></div>
+              <div className="mb-2">
+                <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest bg-blue-50 px-2 py-0.5 rounded-full">{currentQuestion.category}</span>
+              </div>
               
-              <p className="text-2xl font-black text-slate-700 mb-10 leading-tight relative z-10 px-2">
+              <p className="text-2xl font-black text-slate-700 mb-8 leading-tight">
                 {currentQuestion.question}
               </p>
 
-              <div className="space-y-1 relative z-10">
+              <div className="space-y-1">
                 {currentQuestion.options.map((option, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleSelectOption(idx)}
-                    className={getButtonClass(idx)}
-                  >
+                  <button key={idx} onClick={() => handleSelectOption(idx)} className={getButtonClass(idx)}>
                     <span className="flex-1 text-left">{String.fromCharCode(65 + idx)}. {option}</span>
-                    {isAnswered && idx === currentQuestion.correctIndex && <span className="text-3xl animate-bounce">🌟</span>}
-                    {isAnswered && idx === selectedAnswer && idx !== currentQuestion.correctIndex && <span className="text-3xl">💡</span>}
                   </button>
                 ))}
               </div>
 
               {isAnswered && (
-                <div className="mt-8 space-y-4 animate-slide-up">
-                  <div className="p-5 bg-yellow-50/50 backdrop-blur-sm rounded-3xl border-2 border-yellow-100/50">
-                    <p className="text-yellow-800 text-sm font-bold flex gap-2">
-                      <span className="text-lg">📢</span> 提示：{currentQuestion.explanation}
+                <div className="mt-6 space-y-3 animate-slide-up">
+                  <div className="p-4 bg-yellow-50/50 rounded-2xl border-2 border-yellow-100/50">
+                    <p className="text-yellow-800 text-xs font-bold leading-relaxed">
+                      💡 提示：{currentQuestion.explanation}
                     </p>
                   </div>
-                  
                   {showExplanation ? (
-                    <div className="p-5 bg-pink-50 rounded-3xl border-2 border-pink-100 animate-fade-in shadow-inner">
-                      <p className="text-pink-700 text-sm leading-relaxed">
-                        <span className="font-black text-base block mb-1">🌸 Gemini 老師說：</span>
-                        {geminiAdvice}
+                    <div className="p-4 bg-pink-50 rounded-2xl border-2 border-pink-100 shadow-inner">
+                      <p className="text-pink-700 text-xs leading-relaxed">
+                        🌸 <span className="font-black">Gemini 老師說：</span>{geminiAdvice}
                       </p>
                     </div>
                   ) : (
                     <button 
                       onClick={fetchGeminiAdvice}
                       disabled={isLoadingAdvice}
-                      className="w-full py-3 bg-pink-50/50 border-2 border-dashed border-pink-200 rounded-2xl text-pink-400 font-black hover:bg-pink-50 transition-all text-sm flex items-center justify-center gap-2 group"
+                      className="w-full py-2.5 bg-pink-50/50 border-2 border-dashed border-pink-200 rounded-xl text-pink-400 font-black hover:bg-pink-50 transition-all text-xs flex items-center justify-center gap-2"
                     >
-                      {isLoadingAdvice ? "⏳ 老師正在思考中..." : "✨ 想聽聽老師的小秘訣嗎？"}
-                      {!isLoadingAdvice && <span className="group-hover:translate-x-1 transition-transform">➜</span>}
+                      {isLoadingAdvice ? "⏳ 思考中..." : "✨ 聽聽老師的小秘訣？"}
                     </button>
                   )}
                 </div>
@@ -250,79 +220,40 @@ const App: React.FC = () => {
 
         {/* State: RESULT */}
         {appState === AppState.RESULT && currentLesson && (
-          <div className="bg-white rounded-[3.5rem] p-10 shadow-2xl text-center border-b-[12px] border-green-200 animate-bounce-in relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-green-50 rounded-bl-[4rem] -mr-8 -mt-8 opacity-40"></div>
-            <div className="relative inline-block mb-10">
-               <div className="text-9xl animate-float">{score === currentLesson.questions.length ? '👑' : '🎖️'}</div>
-               <div className="absolute -top-4 -right-4 text-4xl animate-float-delayed">✨</div>
-               <div className="absolute -bottom-2 -left-4 text-4xl animate-float">🎈</div>
-            </div>
+          <div className="max-w-md mx-auto bg-white rounded-[3rem] p-10 shadow-2xl text-center border-b-[12px] border-green-200 animate-bounce-in">
+            <div className="text-8xl mb-6 animate-float">{score === currentLesson.questions.length ? '👑' : '🎖️'}</div>
+            <h2 className="text-2xl font-game text-slate-700 mb-1">大冒險完成！</h2>
+            <p className="text-xs font-bold text-slate-400 mb-8 tracking-widest">{currentLesson.title}</p>
             
-            <h2 className="text-3xl font-game text-slate-700 mb-2">冒險達成！好厲害！</h2>
-            <p className="text-base font-bold text-slate-400 mb-10 uppercase tracking-widest px-4">{currentLesson.title}</p>
-            
-            <div className="mb-12 bg-slate-50 py-8 rounded-[2rem] border-2 border-dashed border-slate-200">
-              <span className="text-8xl font-black bg-gradient-to-br from-pink-500 to-orange-400 bg-clip-text text-transparent">{score}</span>
-              <span className="text-3xl text-slate-300 font-black mx-2">/</span>
-              <span className="text-3xl text-slate-400 font-black">{currentLesson.questions.length}</span>
-              <p className="mt-4 text-slate-500 font-bold">小{currentLesson.animal}非常崇拜你喔！</p>
+            <div className="mb-10 bg-slate-50 py-6 rounded-3xl border-2 border-dashed border-slate-200">
+              <span className="text-7xl font-black text-blue-500">{score}</span>
+              <span className="text-2xl text-slate-300 font-black mx-2">/</span>
+              <span className="text-2xl text-slate-400 font-black">{currentLesson.questions.length}</span>
             </div>
 
-            <div className="space-y-4">
-              <button 
-                onClick={() => selectLesson(currentLesson)}
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-black py-5 rounded-[2rem] shadow-xl transform active:scale-95 transition-all text-2xl border-b-4 border-blue-800/30"
-              >
-                再次挑戰
-              </button>
-              <button 
-                onClick={goToLessonSelect}
-                className="w-full bg-white text-slate-400 border-4 border-slate-100 font-black py-4 rounded-[2rem] hover:bg-slate-50 transition-all text-lg shadow-sm"
-              >
-                換個單元冒險
-              </button>
+            <div className="grid grid-cols-2 gap-3">
+              <button onClick={() => selectLesson(currentLesson)} className="bg-blue-500 text-white font-black py-4 rounded-2xl shadow-lg transform active:scale-95 transition-all text-lg">重來</button>
+              <button onClick={goToLessonSelect} className="bg-white text-slate-400 border-4 border-slate-100 font-black py-4 rounded-2xl hover:bg-slate-50 transition-all">換單元</button>
             </div>
           </div>
         )}
-
-      </div>
-      
-      <div className="mt-16 text-center text-slate-300 text-[10px] font-black uppercase tracking-[0.3em] opacity-60">
-        <p>Pinyin Fun Garden · Wonderful Journey</p>
       </div>
 
       <style>{`
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes bounceIn { 
-          0% { transform: scale(0.6); opacity: 0; }
-          60% { transform: scale(1.1); }
-          100% { transform: scale(1); opacity: 1; }
-        }
-        @keyframes float {
-          0%, 100% { transform: translateY(0) rotate(0deg); }
-          50% { transform: translateY(-15px) rotate(5deg); }
-        }
-        @keyframes shake {
-          0%, 100% { transform: translateX(0); }
-          25% { transform: translateX(-5px); }
-          75% { transform: translateX(5px); }
-        }
-        @keyframes running {
-          from { transform: translateX(-50%) translateY(0); }
-          to { transform: translateX(-50%) translateY(-10px); }
-        }
-        .animate-fade-in { animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .animate-slide-up { animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .animate-bounce-in { animation: bounceIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
-        .animate-float { animation: float 4s ease-in-out infinite; }
-        .animate-float-delayed { animation: float 4s ease-in-out 2s infinite; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounceIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes running { from { transform: translateX(-50%) translateY(0); } to { transform: translateX(-50%) translateY(-8px); } }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+        .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+        .animate-bounce-in { animation: bounceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-float-delayed { animation: float 3s ease-in-out 1.5s infinite; }
         .animate-shake { animation: shake 0.2s ease-in-out 3; }
-        .animate-pulse-gentle { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-        @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.02); }
-        }
+        .animate-pulse-gentle { animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }
       `}</style>
     </div>
   );
